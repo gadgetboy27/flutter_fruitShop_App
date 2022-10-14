@@ -1,4 +1,27 @@
-import 'package:flutter/material.dart' show AppBar, BuildContext, Card, Chip, Colors, Column, EdgeInsets, Expanded, ListView, MainAxisAlignment, Padding, Row, Scaffold, ScaffoldMessenger, SizedBox, SnackBar, Spacer, StatelessWidget, Text, TextButton, TextStyle, Widget;
+import 'package:flutter/material.dart'
+    show
+        AppBar,
+        BuildContext,
+        Card,
+        Chip,
+        Colors,
+        Column,
+        EdgeInsets,
+        Expanded,
+        ListView,
+        MainAxisAlignment,
+        Padding,
+        Row,
+        Scaffold,
+        ScaffoldMessenger,
+        SizedBox,
+        SnackBar,
+        Spacer,
+        StatelessWidget,
+        Text,
+        TextButton,
+        TextStyle,
+        Widget;
 import 'package:provider/provider.dart';
 
 import '../widgets/cart_item.dart';
@@ -16,7 +39,7 @@ class CartScreen extends StatelessWidget {
     var total = cart.totalAmount;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Your Cart'),
+        title: Text('Your Cart has ${cart.items.length} items'),
       ),
       body: Column(
         children: [
@@ -54,7 +77,7 @@ class CartScreen extends StatelessWidget {
                             content: Text(
                               'Order Successful!',
                               style: TextStyle(
-                                color: Colors.green,
+                                color: Colors.white,
                               ),
                             ),
                           ),
@@ -75,15 +98,15 @@ class CartScreen extends StatelessWidget {
                     },
                     child: Chip(
                       label: Text(
-                      'Click to Order \$ $total',
-                      // style: TextStyle(
-                      //   color: Colors.black,
-                      //   // backgroundColor: Theme.of(context).
-                      //   // primaryTextTheme.headline6.color
-                      //     ),
-                        ),
+                        'Click to Order \$ $total',
+                        style: TextStyle(
+                          color: Colors.black,
+                          // backgroundColor: Theme.of(context).
+                          // primaryTextTheme.headline6.color
+                            ),
                       ),
                     ),
+                  ),
                   // ),
                 ],
               ),
@@ -99,7 +122,7 @@ class CartScreen extends StatelessWidget {
                   productId: cart.items.keys.toList()[index],
                   quantity: items[index].quantity,
                   price: items[index].price,
-                  image:items[index].image,
+                  image: items[index].image,
                 );
               },
               itemCount: cart.items.length,

@@ -3,10 +3,10 @@ import 'package:flutter_complete_guide/providers/products.dart';
 import 'package:provider/provider.dart';
 import '../widgets/product_item.dart';
 
-class ProductsGrid extends StatelessWidget {
+class ProductsList extends StatelessWidget {
   final bool _showAll;
 
-  ProductsGrid(this._showAll);
+  ProductsList(this._showAll);
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +23,10 @@ class ProductsGrid extends StatelessWidget {
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         childAspectRatio: 2 / 2,
-        crossAxisSpacing: 15,//space between rows
-        mainAxisSpacing: 20,//space between columns
+        crossAxisSpacing: 15, //space between rows
+        mainAxisSpacing: 20, //space between columns
       ),
+      
     );
   }
 }
